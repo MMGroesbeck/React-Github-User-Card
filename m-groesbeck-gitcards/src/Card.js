@@ -20,6 +20,7 @@ class Card extends React.Component {
         });
       })
       .catch(err => console.log(err));
+      GitHubCalendar (`.ghcal${this.props.userName}`, this.props.userName, {responsive: true});
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -27,11 +28,11 @@ class Card extends React.Component {
       this.setState({
         userName: this.props.userName
       });
-      console.log(
-        "Card CDU ran; userName: ",
-        this.props.userName,
-        prevProps.userName
-      );
+    //   console.log(
+    //     "Card CDU ran; userName: ",
+    //     this.props.userName,
+    //     prevProps.userName
+    //   );
       axios
         .get(`https://api.github.com/users/${this.props.userName}`)
         .then(res => {
@@ -82,7 +83,7 @@ class Card extends React.Component {
           </div>
         </div>
         <div className={this.state.expandClass}>
-          <div className="calendar">
+          <div className={`ghcal${this.props.userName}`}>
             <h3>Calendar Goes Here</h3>
           </div>
         </div>

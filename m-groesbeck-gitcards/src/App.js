@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   newUser = e => {
-    console.log("New user name: ", this.state.queryStr);
+    // console.log("New user name: ", this.state.queryStr);
     if (this.state.queryStr !== this.state.userName){
       this.setState({
         userName: this.state.queryStr
@@ -29,7 +29,7 @@ class App extends React.Component {
         console.log("Follower list updated.")
         this.setState({
           followersList: res.data.map(thisFoll => {
-            console.log(thisFoll);
+            // console.log(thisFoll);
             return thisFoll.login;
           })
         });
@@ -64,8 +64,7 @@ class App extends React.Component {
         <h1>GitHub Followers:</h1>
         <div className="cards">
           {this.state.followersList.map(follower => (
-            <><h3>{follower}</h3>
-            <Card userName={follower} /></>
+            <><Card userName={follower} /></>
           ))}
         </div>
       </div>
