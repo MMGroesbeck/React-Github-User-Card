@@ -26,7 +26,7 @@ class App extends React.Component {
     axios
       .get(`https://api.github.com/users/${this.state.queryStr}/followers`)
       .then(res => {
-        console.log("Follower list updated.")
+        // console.log("Follower list updated.");
         this.setState({
           followersList: res.data.map(thisFoll => {
             // console.log(thisFoll);
